@@ -64,7 +64,7 @@ const sessionOptions={
 };
 
 // app.use("/",listingRouter);
-
+app.use("/",userRouter);
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -89,7 +89,7 @@ app.use((req,res,next)=>{
 //   let registeredUser=await User.register(fakeUser, "hello");
 //   res.send(registeredUser);
 // });
-app.use("/",userRouter);
+
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 
